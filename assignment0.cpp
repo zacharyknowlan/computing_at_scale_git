@@ -5,6 +5,7 @@
 #include <string>
 #include "mat.hpp"
 #include "mult.hpp"
+#include "vec.hpp"
 
 int main(int argc, char *argv[])
 {
@@ -26,23 +27,31 @@ int main(int argc, char *argv[])
 		return 1;
 	}
 
-	matrix mat;
+	Matrix mat;
 	mat.PopulateFromFile("test_mat.mm");
 
-	matrix eye_mat;
+	Matrix eye_mat;
 	eye_mat.PopulateFromFile("eye_mat.mm");
 
-	int dim = mat.GetNRows();
+	int dim = std::size_t(mat.GetNRows());
 
 	if (comp_type == 0)
 	{
-		std::vector<double> vec(dim); 
-		std::vector<double> result_vec(dim);
-		Mult(mat, vec, result_vec);
+		Vector col_vec(dim);
+		col_vec.PopulateFromFile("test_col_vec.mm");
+		Vector result_col_vec(dim);
+		Mult(mat, col_vec, result_col_vec);
+		result_col_vec.PrintMM("result_col_vec.mm");
+
+		Vector row_vec(dim);
+		row_vec.PopulateFromFile("test_row_vec.mm");
+		Vector result_row_vec(dim);
+		Mult(row_vec, mat, result_row_vec);
+		result_row_vec.PrintMM("result_row_vec.mm");
 	}
 	else if (comp_type == 1)
 	{
-		matrix result_mat(dim, dim);
+		Matrix result_mat(dim, dim);
 		Mult(mat, eye_mat, result_mat);
 		result_mat.PrintMM("result_mat.mm");
 	}

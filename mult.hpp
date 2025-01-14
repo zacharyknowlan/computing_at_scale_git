@@ -5,9 +5,12 @@
 #include <vector>
 #include <string>
 #include "mat.hpp"
+#include "vec.hpp"
 
-void Mult(matrix &mat, std::vector<double> &vec, std::vector<double> &result);
+void Mult(Matrix &mat, Vector &vec, Vector &result);
 
-void Mult(matrix &mat1, matrix &mat2, matrix &result);
+void Mult(Vector &vec, Matrix &mat, Vector &result);
+
+void Mult(Matrix &mat1, Matrix &mat2, Matrix &result);
 
 #endif

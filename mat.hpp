@@ -1,29 +1,30 @@
 #ifndef MATRIX_HPP
 #define MATRIX_HPP
 
-#include <cassert>
 #include <vector>
 #include <string>
 #include <sstream>
 #include <fstream>
 #include <iostream>
+#include <cassert>
 
-class matrix
+class Matrix
 {
 	protected:
+		
 		std::vector<std::vector<double>> mat;
 
 	public:
 		
-		matrix(){}
+		Matrix(){}
 
-		matrix(const std::size_t &rows, const std::size_t &cols);
+		Matrix(const std::size_t rows, const std::size_t cols);
 
-		void SetSize(const std::size_t &rows, const std::size_t &cols);
+		void SetSize(const std::size_t rows, const std::size_t cols);
 
-		const int GetNRows() {return mat.size();}
+		inline const int GetNRows() {return mat.size();}
 
-		const int GetNCols() {return mat[0].size();}
+		inline const int GetNCols() {return mat[0].size();}
 
 		std::vector<double> &operator[](int ii) {return mat[ii];}
 

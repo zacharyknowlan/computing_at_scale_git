@@ -1,11 +1,11 @@
 #include "mat.hpp"
 
-matrix::matrix(const std::size_t &rows, const std::size_t &cols)
+Matrix::Matrix(const std::size_t rows, const std::size_t cols)
 {
     SetSize(rows, cols);
 }
 
-void matrix::SetSize(const std::size_t &rows, const std::size_t &cols)
+void Matrix::SetSize(const std::size_t rows, const std::size_t cols)
 {
     assert(rows > 0 && cols > 0);
     mat.resize(rows);
@@ -15,7 +15,7 @@ void matrix::SetSize(const std::size_t &rows, const std::size_t &cols)
     }
 }
 
-void matrix::PopulateFromFile(std::string filename)
+void Matrix::PopulateFromFile(std::string filename)
 {
     std::ifstream infile(filename);
     std::string line;
@@ -61,11 +61,11 @@ void matrix::PopulateFromFile(std::string filename)
     }
     else
     {
-        std::cout << "Error opening file\n";
+        std::cout << "Error opening file: " << filename << "\n";
     }			
 }
 
-void matrix::PrintMM(std::string filename)
+void Matrix::PrintMM(std::string filename)
 {
     std::ofstream outfile(filename);
 
