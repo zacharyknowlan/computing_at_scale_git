@@ -59,7 +59,7 @@ int main(int argc, char *argv[])
 		result_mat.PrintMM("result_mat.mm");
 	}
 	else
-	{
+	{	// show options if unsucessful run
 		std::cout << "\n\033[31mIncompatible arguments!\033[0m\n\n";	
 		std::cout << "Use -c to specify operation type (0 = mat*vec, 1 = mat*mat)\n";
 		std::cout << "Use -vf to specify vector filename.\n";

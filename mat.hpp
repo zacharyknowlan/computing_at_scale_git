@@ -16,20 +16,40 @@ class Matrix
 
 	public:
 		
+		// default constructor
 		Matrix(){}
 
+		/**
+         * @brief construct the vector with size rows, cols.
+         */
 		Matrix(const std::size_t rows, const std::size_t cols);
 
+		/**
+         * @brief set the size of the matrix to have rows rows and cols columns.
+         */
 		void SetSize(const std::size_t rows, const std::size_t cols);
 
+		/**
+         * @brief Get the number of columns the matrix has.
+         */
 		inline const int GetNRows() {return mat.size();}
 
+		/**
+         * @brief Get the number of rows the matrix has.
+         */
 		inline const int GetNCols() {return mat[0].size();}
 
+		// operator set to allow mat[ii][jj] indexing
 		std::vector<double> &operator[](int ii) {return mat[ii];}
 
+		/**
+         * @brief Populates mat from a given matrix market (.mm) file.
+         */
 		void PopulateFromFile(std::string filename);
 
+		/**
+         * @brief Prints the contents of mat to a matrix market (.mm) file.
+         */
 		void PrintMM(std::string filename);
 };
 
