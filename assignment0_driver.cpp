@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 	std::string mat_filename;
 	std::string mat2_filename;
 
-	for (int ii=0; ii<argc; ii++)
+	for (int ii=0; ii<argc; ii++) // parse command line options
 	{
 		std::string arg = argv[ii];
 		if (arg == "-c" || arg == "--comp_type") {comp_type = std::stoi(argv[ii+1]);} 
@@ -23,14 +23,8 @@ int main(int argc, char *argv[])
 		else if (arg == "-m2f" || arg == "--mat2_filename") {mat2_filename = argv[ii+1];}
 	}
 	
-	if (comp_type != 0 && comp_type != 1)
-	{
-		std::cout << "Use -c 0 for matrix vector multiplication \n";
-		std::cout << "or -c 1 for matrix matrix multiplication. \n";
-		return 1;
-	}
-	else if (comp_type == 0)
-	{
+	if (comp_type == 0 && !vec_filename.empty() && !mat_filename.empty()) 
+	{	// matrix-vector multiplication
 		Vector vec;
 		vec.PopulateFromFile(vec_filename);
 
@@ -50,8 +44,8 @@ int main(int argc, char *argv[])
 
 		result_vec.PrintMM("result_vec.mm");
 	}
-	else if (comp_type == 1)
-	{
+	else if (comp_type == 1 && !mat_filename.empty() && !mat2_filename.empty())
+	{	// matrix-matrix multiplication
 		Matrix mat1;
 		mat1.PopulateFromFile(mat_filename);
 		
@@ -63,6 +57,15 @@ int main(int argc, char *argv[])
 		Mult(mat1, mat2, result_mat);
 
 		result_mat.PrintMM("result_mat.mm");
+	}
+	else
+	{
+		std::cout << "\n\033[31mIncompatible arguments!\033[0m\n\n";	
+		std::cout << "Use -c to specify operation type (0 = mat*vec, 1 = mat*mat)\n";
+		std::cout << "Use -vf to specify vector filename.\n";
+		std::cout << "Use -mf to specify matrix filename.\n";
+		std::cout << "Use -m2f to specify 2nd matrix filename.\n\n";
+		return 1;
 	}
 
 	return 0;

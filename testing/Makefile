@@ -1,7 +1,7 @@
-all: assignment0
+all: assignment0_tests
 
-assignment0: assignment0_tester.o mult.o mat.o vec.o tests.o
-	g++ -o assignment0 assignment0_tester.o mult.o mat.o vec.o tests.o
+assignment0_tests: assignment0_tester.o mult.o mat.o vec.o tests.o
+	g++ -o assignment0_tests assignment0_tester.o mult.o mat.o vec.o tests.o
 
 assignment0_tester.o: assignment0_tester.cpp
 	g++ -c assignment0_tester.cpp
