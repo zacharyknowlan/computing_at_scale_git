@@ -1,10 +1,10 @@
 all: assignment0
 
-assignment0: assignment0.o mult.o mat.o vec.o
-	g++ -o assignment0 assignment0.o mult.o mat.o vec.o
-	
-assignment0.o: assignment0.cpp
-	g++ -c assignment0.cpp
+assignment0: assignment0_driver.o mult.o mat.o vec.o
+	g++ -o assignment0 assignment0_driver.o mult.o mat.o vec.o
+
+assignment0_driver.o: assignment0_driver.cpp
+	g++ -c assignment0_driver.cpp
 
 mult.o: mult.cpp
 	g++ -c mult.cpp
@@ -16,4 +16,4 @@ vec.o: vec.cpp
 	g++ -c vec.cpp
 
 clean:
-	rm -rf assignment0 assignment0.o
+	rm -rf assignment0_driver.o mult.o mat.o vec.o

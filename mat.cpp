@@ -20,6 +20,8 @@ void Matrix::PopulateFromFile(std::string filename)
     std::ifstream infile(filename);
     std::string line;
     bool key_line = true;
+    int row, col;
+    double data;
 
     if (infile.is_open())
     {
@@ -48,11 +50,11 @@ void Matrix::PopulateFromFile(std::string filename)
                     SetSize(N_rows, N_cols);
                     key_line = false;
                 }
-                else
+                else // populate matrix with line data
                 {
-                    int row = (std::stoi(params[0]) - 1);
-                    int col = (std::stoi(params[1]) - 1);
-                    double data = std::stod(params[2]);
+                    row = (std::stoi(params[0]) - 1);
+                    col = (std::stoi(params[1]) - 1);
+                    data = std::stod(params[2]);
                     mat[row][col] = data;
                 }
             }
