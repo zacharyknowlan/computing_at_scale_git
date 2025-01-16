@@ -8,10 +8,10 @@ To run this code using the driver function:
 4. ./assignment0 
 
 NOTE: the following command line options are used when running the assignment0 binary
-1. "-c" or "--comp_type" specifies matrix-vector or matrix-matrix multiplication.
-2. "-vf" or "--vec_filename" specifies the filename of a vector to be mutliplied.
-3. "-mf" or "--mat_filename" specifies the filename of a matrix to be multiplied.
-4. "-m2f" or "--mat2_filename" specifies the filename of a 2nd matrix (matrix-matrix multiplication only).
+- "-c" or "--comp_type" specifies matrix-vector or matrix-matrix multiplication.
+- "-vf" or "--vec_filename" specifies the filename of a vector to be mutliplied.
+- "-mf" or "--mat_filename" specifies the filename of a matrix to be multiplied.
+- "-m2f" or "--mat2_filename" specifies the filename of a 2nd matrix (matrix-matrix multiplication only).
 
 To test this code using the implemented tests:
 
