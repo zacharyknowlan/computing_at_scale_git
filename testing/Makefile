@@ -19,4 +19,4 @@ vec.o: ../vec.cpp
 	g++ -c ../vec.cpp
 
 clean:
-	rm -rf assignment0_tester.o mult.o mat.o vec.o tests.o
+	rm -rf assignment0_tests assignment0_tester.o mult.o mat.o vec.o tests.o
