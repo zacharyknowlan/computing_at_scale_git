@@ -3,9 +3,9 @@ To download this repository in a directory of your choice use.
 2. git clone https://github.com/zacharyknowlan/computing_at_scale_git
 
 To run this code using the driver function:
-2. cd computing_at_scale_git/
-3. make
-4. ./assignment0 
+1. cd computing_at_scale_git/
+2. make
+3. ./assignment0 
 
 NOTE: the following command line options are used when running the assignment0 binary
 - "-c" or "--comp_type" specifies matrix-vector or matrix-matrix multiplication.
