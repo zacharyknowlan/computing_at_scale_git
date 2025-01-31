@@ -1,0 +1,3 @@
+add_library(NumericalIntegrationLibrary NumericalIntegrator.cpp IntegrationRule.cpp)
+target_include_directories(NumericalIntegrationLibrary PUBLIC ${CMAKE_CURRENT_LIST_DIR})
+target_link_libraries(NumericalIntegrationLibrary PUBLIC FunctionLibrary)
