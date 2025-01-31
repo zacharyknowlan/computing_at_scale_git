@@ -1,0 +1,2 @@
+add_library(FunctionLibrary Polynomial.cpp)
+target_include_directories(FunctionLibrary PUBLIC ${CMAKE_CURRENT_LIST_DIR})
