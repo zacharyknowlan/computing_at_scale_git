@@ -3,7 +3,8 @@ To run the assignment1 code use the following commands:
 2. `cd computing_at_scale_git/assignment1/`
 3. `cmake -S . -B build`
 4. `cd build/`
-5. `./main` and include command line options
+5. `make`
+6. `./main` and include command line options
 
 The following command line options are available for polynomial_intagrate.cpp:
 1. `-ir QuadratureType NumPoints` specifies the integration rule where either `GaussLegendre` `GaussLobatto` `ChebyshevType1` `ChebyshevType2` `Custom` is used in place of QuadratureType and an integer number of points is used in place of NumPoints. Note. if `Custom` is used, the user will have to edit the vectors of points and weights within the `polynomial_integrate.cpp` file and then recompile the code. An example would look like `-ir GaussLegendre 3`
@@ -18,7 +19,8 @@ To run the assignment1 tests:
 2. Make sure the `build/` directory doesn't exit
 3. `cmake -S . -B build`
 4. `cd build/`
-5. `./main`
+5. `make` 
+6. `./main`
 
 No command line options exist for testing.
 
