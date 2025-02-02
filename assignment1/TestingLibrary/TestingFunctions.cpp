@@ -61,7 +61,8 @@ void TestIntegrationRule()
     auto test2 = TestIntegrationRuleSetAndGetWeights();
     auto test3 = TestIntegrationRuleGetPoint();
     auto test4 = TestIntegrationRuleGetWeight();
-    auto test_total = test1 + test2 + test3 + test4;
+    auto test5 = TestIntegrationRuleGetQuadratureType();
+    auto test_total = test1 + test2 + test3 + test4 + test5;
     std::cout << test_total << " IntegrationRule test(s) failed.\033[0m\n";
 }
 

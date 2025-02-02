@@ -41,14 +41,14 @@ void TestPolynomial();
 void TestIntegrationRule();
 
 /**
- * Tests the IntegrationRule::SetPoints() function 
+ * Tests the IntegrationRule::SetPoints(std::vector<double> &points) function 
  * Prints the test results to the terminal.
  * Returns 1 if the test fails and 0 if the test passes.
  */
 [[nodiscard]] int TestIntegrationRuleSetAndGetPoints();
 
 /**
- * Tests the IntegrationRule::SetWeights() function 
+ * Tests the IntegrationRule::SetWeights(std::vector<double> &weights) function 
  * Prints the test results to the terminal.
  * Returns 1 if the test fails and 0 if the test passes.
  */
@@ -67,6 +67,13 @@ void TestIntegrationRule();
  * Returns 1 if the test fails and 0 if the test passes.
  */
 [[nodiscard]] int TestIntegrationRuleGetWeight();
+
+/**
+ * Tests the IntegrationRule::GetQuadratureType() function.
+ * Prints the test results to the terminal.
+ * Returns 1 if the test fails and 0 if the test passes.
+ */
+[[nodiscard]] int TestIntegrationRuleGetQuadratureType();
 
 /**
  * Runs all the test cases for the NumericalIntegrator class.
