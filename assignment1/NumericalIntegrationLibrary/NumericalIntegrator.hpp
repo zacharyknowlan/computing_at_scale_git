@@ -18,17 +18,24 @@ class NumericalIntegrator
         /**
          * Construct the NumericalIntegrator with an IntegrationRule.
          */
-        NumericalIntegrator(IntegrationRule &int_rule) : ir(int_rule) {}
+        NumericalIntegrator(IntegrationRule &int_rule){SetIntegrationRule(int_rule);}
 
         /**
          * Set the IntegrationRule to be used by the NumericalIntegrator.
-         * This exists for convenience but in general the constructor that 
-         * accepts the IntegrationRule should be used.
          */
         void SetIntegrationRule(IntegrationRule &int_rule) {ir = int_rule;}
+
+        /**
+         * Get the IntegrationRule used by the NumericalIntegrator.
+         */
+        IntegrationRule &GetIntegrationRule() {return ir;}
         
         /**
          * Numerically computes the integral of Polynomial func on the interval [a,b].
+         * 
+         * Note: This function will ignore the interval provided [a,b] if the QuadratureType
+         * of the IntegrationRule is ChebyshevType1 or ChebyshevType2 because linear mapping
+         * is not valid.
          */
         [[nodiscard]] double ComputeIntegral(Polynomial &func, double a, double b);
 };

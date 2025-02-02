@@ -4,6 +4,10 @@
 class ScalarFunction 
 {
     public:
+
+        /**
+         * Assumes the function is continous on a given 1D interval [a,b]
+         */
         [[nodiscard]] virtual double operator()(double position) = 0;
 
     ScalarFunction(){}

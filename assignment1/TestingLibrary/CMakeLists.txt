@@ -1,0 +1,4 @@
+add_library(TestingLibrary TestingFunctions.cpp)
+target_include_directories(TestingLibrary PUBLIC ${CMAKE_CURRENT_LIST_DIR})
+target_link_libraries(TestingLibrary PUBLIC NumericalIntegrationLibrary)
+target_link_libraries(TestingLibrary PUBLIC FunctionLibrary)

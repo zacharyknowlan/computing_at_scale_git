@@ -8,14 +8,15 @@ IntegrationRule::IntegrationRule(QuadratureType q_type, int num_points)
         throw std::invalid_argument("Number of points must be greater than 0.");
     }
 
-    // Set locations and weights based on num_points
+    // Set locations and weights and QuadratureType based on num_points
     this->x.resize(num_points); 
     this->w.resize(num_points);
+    this->q = q_type;
 
     // Assign weights and points based on QuadratureType
     switch (q_type) 
     {
-        case GaussLegendre:
+        case this->QuadratureType::GaussLegendre:
             if (num_points >= 5)
             {
                 throw std::invalid_argument(std::to_string(num_points) 
@@ -55,7 +56,7 @@ IntegrationRule::IntegrationRule(QuadratureType q_type, int num_points)
             }
             break;
 
-        case GaussLobatto:
+        case this->QuadratureType::GaussLobatto:
             if (num_points >= 6 || num_points <= 2) // Make sure user provided a valid number of points
             {
                 throw std::invalid_argument(std::to_string(num_points) 
@@ -97,7 +98,7 @@ IntegrationRule::IntegrationRule(QuadratureType q_type, int num_points)
             }
             break;
 
-        case ChebyshevType1:
+        case this->QuadratureType::ChebyshevType1:
             // Assign weights and points for num_points points for ChebyshevType1 quadrature
             for (int ii=0; ii<num_points; ii++)
             {
@@ -106,7 +107,7 @@ IntegrationRule::IntegrationRule(QuadratureType q_type, int num_points)
             }
             break;
 
-        case ChebyshevType2:
+        case this->QuadratureType::ChebyshevType2:
             // Assign weights and points for numpoints_points for ChebyshevType1 quadrature
             for (int ii=0; ii<num_points; ii++)
             {
@@ -115,4 +116,16 @@ IntegrationRule::IntegrationRule(QuadratureType q_type, int num_points)
             }
             break;
     }
+}
+
+void IntegrationRule::SetPoints(std::vector<double> &points)
+{
+    this->x = points;
+    this->q = this->QuadratureType::Custom;
+}
+
+void IntegrationRule::SetWeights(std::vector<double> &weights)
+{
+    this->w= weights;
+    this->q = this->QuadratureType::Custom;
 }
