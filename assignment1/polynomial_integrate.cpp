@@ -61,6 +61,15 @@ int main(int argc, char* argv[])
     {
         integ_rule = IntegrationRule(IntegrationRule::QuadratureType::ChebyshevType2, num_points);
     }
+    else if (quad_type == "Custom")
+    {
+        integ_rule = IntegrationRule(IntegrationRule::QuadratureType::Custom, num_points);
+        std::vector<double> points; // = EDIT HERE
+        integ_rule.SetPoints(points);
+        std::vector<double> weights; // = EDIT HERE 
+        integ_rule.SetWeights(weights);
+    }
+
 
     auto poly = Polynomial(coeffs); // Define polynomial coeffs[0] + coeffs[1]*x + coeffs[2]*x^2 ...
     auto num_integ = NumericalIntegrator(integ_rule); // Create numerical integrator object

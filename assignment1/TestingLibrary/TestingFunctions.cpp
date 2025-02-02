@@ -1,12 +1,13 @@
 #include "TestingFunctions.hpp"
 
-void TestPolynomial()
+int TestPolynomial()
 {
     std::cout << "\nTesting Polynomial...\n";
     auto test1 = TestPolynomialSetAndGetCoefficients();
     auto test2 = TestPolynomialCallOperator();
     auto test_total = test1 + test2;
     std::cout << test_total << " Polynomial test(s) failed.\033[0m\n";
+    return test_total;
 }
 
 int TestPolynomialSetAndGetCoefficients()
@@ -54,7 +55,7 @@ int TestPolynomialCallOperator()
     }
 }
 
-void TestIntegrationRule()
+int TestIntegrationRule()
 {
     std::cout << "\nTesting IntegrationRule...\n";
     auto test1 = TestIntegrationRuleSetAndGetPoints();
@@ -64,6 +65,7 @@ void TestIntegrationRule()
     auto test5 = TestIntegrationRuleGetQuadratureType();
     auto test_total = test1 + test2 + test3 + test4 + test5;
     std::cout << test_total << " IntegrationRule test(s) failed.\033[0m\n";
+    return test_total;
 }
 
 int TestIntegrationRuleSetAndGetPoints()
@@ -177,13 +179,14 @@ int TestIntegrationRuleGetQuadratureType()
     }
 }
 
-void TestNumericalIntegrator()
+int TestNumericalIntegrator()
 {
     std::cout << "\nTesting NumericalIntegrator...\n";
     auto test1 = TestNumericalIntegratorSetAndGetIntegrationRule();
     auto test2 = TestNumericalIntegratorComputeIntegral();
     auto test_total = test1 + test2;
     std::cout << test_total << " NumericalIntegrator test(s) failed.\n\n";
+    return test_total;
 }
 
 int TestNumericalIntegratorSetAndGetIntegrationRule()

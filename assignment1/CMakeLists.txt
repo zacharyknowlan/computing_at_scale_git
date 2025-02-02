@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.30)
 project(assignment1 CXX)
 
-set(TEST_MODE TRUE)
+set(TEST_MODE FALSE)
 
 if (TEST_MODE)
     add_executable(main unit_tests.cpp)

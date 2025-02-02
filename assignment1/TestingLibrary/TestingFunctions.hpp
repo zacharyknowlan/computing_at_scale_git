@@ -16,8 +16,9 @@ const double tol_cbyshv = 1e-4;
 /**
  * Runs all of the test cases for the Polynomial class.
  * Prints the number of the Polynomial tests that failed to the terminal.
+ * Returns the total number of tests that failed for the Polynomial class.
  */
-void TestPolynomial();
+int TestPolynomial();
 
 /**
  * Tests the Polynomial::SetCoefficients(std::vector<double> &coeffs)
@@ -37,8 +38,9 @@ void TestPolynomial();
 /**
  * Runs all of the test cases for the IntegrationRule class.
  * Prints the number of tests that failed to the terminal.
+ * Returns the number of tests that failed for the IntegrationRule class.
  */
-void TestIntegrationRule();
+int TestIntegrationRule();
 
 /**
  * Tests the IntegrationRule::SetPoints(std::vector<double> &points) function 
@@ -78,8 +80,9 @@ void TestIntegrationRule();
 /**
  * Runs all the test cases for the NumericalIntegrator class.
  * Prints the number of tests that fail to the terminal.
+ * Returns the number of tests that failed for the NumericalIntegrator class.
  */
-void TestNumericalIntegrator();
+int TestNumericalIntegrator();
 
 /**
  * Tests the NumericalIntegrator::SetIntegrationRule(IntegrationRule &int_rule) method. 
