@@ -3,7 +3,6 @@
 #include "IntegrationRule.hpp"
 #include <iostream>
 #include <vector>
-#include <stdexcept>
 
 int main(int argc, char* argv[])
 {
@@ -75,7 +74,7 @@ int main(int argc, char* argv[])
     auto num_integ = NumericalIntegrator(integ_rule); // Create numerical integrator object
     double integ_val = num_integ.ComputeIntegral(poly, a, b); // Evaluate the integral of poly on interval [a,b]
     
-    std::cout << "Function Integral: " << integ_val << "\n"; // Print out result
+    std::cout << "\nFunction Integral: " << integ_val << "\n\n"; // Print out result
 
     return 0;
 }

@@ -10,7 +10,7 @@ class ScalarFunction
          */
         [[nodiscard]] virtual double operator()(double position) = 0;
 
-    ScalarFunction(){}
+        virtual ~ScalarFunction() {}
 };
 
 #endif

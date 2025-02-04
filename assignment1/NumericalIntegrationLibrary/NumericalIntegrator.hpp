@@ -4,7 +4,7 @@
 #include <vector>
 #include <stdexcept>
 #include "IntegrationRule.hpp"
-#include "Polynomial.hpp"
+#include "ScalarFunction.hpp"
 
 class NumericalIntegrator
 {
@@ -13,12 +13,12 @@ class NumericalIntegrator
         
     public:
 
-        NumericalIntegrator() {};
+        NumericalIntegrator() {}
         
         /**
          * Construct the NumericalIntegrator with an IntegrationRule.
          */
-        NumericalIntegrator(IntegrationRule &int_rule){SetIntegrationRule(int_rule);}
+        NumericalIntegrator(IntegrationRule &int_rule) {SetIntegrationRule(int_rule);}
 
         /**
          * Set the IntegrationRule to be used by the NumericalIntegrator.
@@ -37,7 +37,9 @@ class NumericalIntegrator
          * of the IntegrationRule is ChebyshevType1 or ChebyshevType2 because linear mapping
          * is not valid.
          */
-        [[nodiscard]] double ComputeIntegral(Polynomial &func, double a, double b);
+        [[nodiscard]] double ComputeIntegral(ScalarFunction &func, double a, double b);
+
+        ~NumericalIntegrator() {}
 };
 
 #endif 

@@ -1,6 +1,6 @@
 #include "NumericalIntegrator.hpp"
 
-double NumericalIntegrator::ComputeIntegral(Polynomial &func, double a, double b)
+double NumericalIntegrator::ComputeIntegral(ScalarFunction &func, double a, double b)
 {
     // Check if the IntegrationRule is even possibly valid
     if (this->ir.GetWeights().size() != this->ir.GetPoints().size())
