@@ -67,6 +67,7 @@ class IntegrationRule
          */
         [[nodiscard]] inline int GetQuadratureType() {return this->q;}
 
+        ~IntegrationRule() {}
 };
 
 #endif 

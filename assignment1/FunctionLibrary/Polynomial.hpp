@@ -5,12 +5,14 @@
 #include <vector>
 #include <cmath>
 
-class Polynomial : ScalarFunction
+class Polynomial : public ScalarFunction
 {
     private:
+
         std::vector<double> C; // Polynomial coeficients
 
     public:
+
         Polynomial(){}
 
         /**
@@ -39,6 +41,7 @@ class Polynomial : ScalarFunction
          */
         [[nodiscard]] double operator()(double position) override;
 
+        ~Polynomial(){}
 };
 
 #endif
